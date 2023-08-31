@@ -33,6 +33,8 @@
 
         @include('includes.layout.navbar')
 
+        @include('includes.layout.jumbo')
+
         <main class="container mt-3">
             @yield('content')
         </main>
