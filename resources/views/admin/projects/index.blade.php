@@ -41,6 +41,7 @@
                         <!--DELETE-->
                         <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                             @csrf
+                            @method('DELETE')
                             <button type="submit" class="ms-2 btn btn-sm btn-danger">
                                 <a class="text-white fw-bold text-decoration-none" href="#">
                                     <i class="fas fa-trash"></i>
