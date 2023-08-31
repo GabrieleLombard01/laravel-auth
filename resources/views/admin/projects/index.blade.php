@@ -13,7 +13,7 @@
                 <th scope="col">Slug</th>
                 <th scope="col">Linguaggi</th>
                 <th scope="col">Stato</th>
-                <!--<th></th>-->
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +24,30 @@
                     <td>{{ $project->slug }}</td>
                     <td>{{ $project->category }}</td>
                     <td>{{ $project->status }}</td>
+                    <td class="d-flex justify-content-end h-100">
+
+                        <!--SHOW-->
+                        <a class="text-white fw-bold text-decoration-none btn btn-sm btn-primary"
+                            href="{{ route('admin.projects.show', $project) }}">
+                            <i class="fas fa-eye"></i>
+                        </a>
+
+                        <!--EDIT-->
+                        <a class="ms-2 text-white fw-bold text-decoration-none btn btn-sm btn-warning"
+                            href="{{ route('admin.projects.edit', $project) }}">
+                            <i class="fas fa-pencil"></i>
+                        </a>
+
+                        <!--DELETE-->
+                        <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="ms-2 btn btn-sm btn-danger">
+                                <a class="text-white fw-bold text-decoration-none" href="#">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @empty
                 <tr>
