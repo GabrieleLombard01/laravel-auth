@@ -6,6 +6,7 @@ use App\Models\Project;
 use Faker\Generator;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -18,7 +19,7 @@ class ProjectSeeder extends Seeder
             $project = new Project();
             $project->title = $faker->text(50);
             $project->description = $faker->paragraphs(20, true);
-            $project->slug = str_replace(' ', '-', strtolower($project->title));
+            $project->slug = Str::slug($project->title, '-');
             $project->thumb = $faker->imageUrl(250, 250);
             $project->category = $faker->text(100);
             $project->status = $faker->text(50);
