@@ -1,0 +1,32 @@
+/*SHOW:*/
+#show .btn{
+    background-color: #003500;
+    color: white;
+    border: solid white 1px;
+}
+#show form button a{
+    color: white;
+}
+
+/*CARD:*/
+.card{
+    background-color: #c7e0d0;
+}
+
+/*Pseudo-cleasses:*/
+#show .btn:hover{
+    background-color: white;
+    color: #003500;
+}
+#show .btn:active{
+    background-color: #003500;
+    color: #a1dab5;
+}
+#show form button a:hover{
+    background-color: white;
+    color: #003500;
+}
+#show form button a:active{
+    background-color: #003500;
+    color: #a1dab5;
+}

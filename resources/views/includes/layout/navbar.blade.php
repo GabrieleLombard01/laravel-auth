@@ -7,10 +7,10 @@
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="pt-1 navbar-toggler-icon fa-solid fa-bars" style="color: #ffffff;"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

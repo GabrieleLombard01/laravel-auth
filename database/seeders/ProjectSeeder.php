@@ -17,12 +17,12 @@ class ProjectSeeder extends Seeder
     {
         for ($i = 1; $i <= 5; $i++) {
             $project = new Project();
-            $project->title = $faker->text(50);
-            $project->description = $faker->paragraphs(20, true);
+            $project->title = $faker->text(20);
+            $project->description = $faker->paragraphs(5, true);
             $project->slug = Str::slug($project->title, '-');
             $project->thumb = $faker->imageUrl(250, 250);
-            $project->category = $faker->text(100);
-            $project->status = $faker->text(50);
+            $project->category = $faker->text(10);
+            $project->status = $faker->text(15);
             $project->save();
         }
     }
