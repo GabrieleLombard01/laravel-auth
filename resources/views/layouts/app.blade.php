@@ -30,14 +30,15 @@
 <body>
     <div id="app">
 
-
         @include('includes.layout.navbar')
 
-        @include('includes.layout.jumbo')
+        @yield('jumbo')
 
         <main class="container mt-3">
             @yield('content')
         </main>
+
+        @yield('footer')
     </div>
 
     {{-- scripts --}}

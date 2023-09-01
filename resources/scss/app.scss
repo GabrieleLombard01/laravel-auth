@@ -1,8 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'navbar';
 @import 'jumbo';
+@import 'footer';
 
 /*GENERAL*/
 body{
     background-color: #a1dab5;
+}
+main{
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
