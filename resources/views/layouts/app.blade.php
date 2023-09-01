@@ -10,6 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
+    <style>
+        body {
+            display: none;
+        }
+    </style>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

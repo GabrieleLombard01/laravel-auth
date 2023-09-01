@@ -31,6 +31,7 @@
             @empty
                 <h4 class="text-center">Non ci sono progetti visibili :(</h4>
             @endforelse
+
         </div>
 
 
