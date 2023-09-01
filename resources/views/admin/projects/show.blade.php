@@ -10,7 +10,7 @@
             <hr>
         </header>
 
-        <div class="card mb-3" style="max-width: 1200px">
+        <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="{{ $project->thumb }}" class="m-2 img-fluid rounded-start" alt="{{ $project->title }}">
@@ -43,7 +43,7 @@
                 </a>
 
                 <!--DELETE-->
-                <form class="d-inline" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                <form class="d-inline delete-form" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class=" mb-3 btn btn-sm btn-danger">
@@ -57,4 +57,8 @@
         </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    @vite('resources/js/delete-confirmation.js')
 @endsection

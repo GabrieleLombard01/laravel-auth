@@ -32,6 +32,8 @@
 
         @include('includes.layout.navbar')
 
+        @include('includes.layout.alert')
+
         @yield('jumbo')
 
         <main class="container mt-3">
@@ -42,7 +44,7 @@
     </div>
 
     {{-- scripts --}}
-    @yield('script')
+    @yield('scripts')
 </body>
 
 </html>

@@ -42,7 +42,8 @@
                             </a>
 
                             <!--DELETE-->
-                            <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                            <form class="delete-form" action="{{ route('admin.projects.destroy', $project) }}"
+                                method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="ms-2 btn btn-sm btn-danger">
@@ -64,4 +65,8 @@
             </tr>
         </tbody>
     </table>
+@endsection
+
+@section('scripts')
+    @vite('resources/js/delete-confirmation.js')
 @endsection

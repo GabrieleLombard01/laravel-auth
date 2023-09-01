@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home')
+
 @section('jumbo')
     <div id="jumbo">
         <div class="container text-center pt-5">
@@ -12,7 +14,7 @@
 @section('content')
     <div class="container">
 
-        <h3 class="mt-4 pb-5 text-center">Dai un'occhiata ai miei progetti:</h3>
+        <h3 class="mt-5 pb-3 fw-bold text-center">Dai un'occhiata ai miei progetti:</h3>
 
         <div class="row">
             @forelse($projects as $project)
@@ -20,7 +22,9 @@
                     <div class="card m-3" style="width: 18rem;">
                         <img src="{{ $project->thumb }}" class="card-img-top" alt="{{ $project->title }}">
                         <div class="card-body">
-                            <p class="card-text">{{ $project->title }}.</p>
+                            <h4 class="card-title">{{ $project->title }}.</h4>
+                            <hr>
+                            <a href="#">Scopri</a>
                         </div>
                     </div>
                 </div>
