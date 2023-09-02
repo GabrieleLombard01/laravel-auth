@@ -13,11 +13,18 @@
 
         <div class="row">
 
-            <div class="col-12">
+            <div class="col-6">
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo:</label>
                     <input type="text" name="title" required value="{{ old('title') }}" maxlength="100"
                         class="form-control" id="title" placeholder="Inserisci il titolo del progetto...">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label class="form-label">Slug:</label>
+                    <input disabled type="text" maxlength="100" class="form-control" id="slug" value="">
                 </div>
             </div>
 
@@ -31,7 +38,8 @@
             <div class="col-3">
                 <div class="mb-3">
                     <label for="status" class="form-label">Stato:</label>
-                    <select class="w-50 d-block" required name="status" id="status">
+                    <select aria-label="Default select example" class="form-select" required name="status" id="status">
+                        <option disabled selected>Seleziona... </option>
                         <option value="In_progresso">In progresso</option>
                         <option value="Completato">Completato</option>
                         <option value="Archiviato">Archiviato</option>
@@ -71,13 +79,6 @@
 @endsection
 
 @section('scripts')
-    <script>
-        const placeholder = 'https://marcolanci.it/utils/placeholder.jpg'
-        const imageField = document.getElementById('image');
-        const previewField = document.getElementById('img-preview');
-
-        imageField.addEventListener('input', () => {
-            previewField.src = imageField.value || placeholder;
-        });
-    </script>
+    @vite('resources/js/slug-generator.js')
+    @vite('resources/js/image-previewer.js')
 @endsection
