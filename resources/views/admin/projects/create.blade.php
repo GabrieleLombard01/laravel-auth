@@ -23,25 +23,23 @@
 
             <div class="col-12">
                 <div class="mb-3">
-                    <label for="content" class="form-label">Descrizione:</label>
-                    <textarea class="form-control" id="content" rows="5">
-                        {{ old('content') }}
-                    </textarea>
+                    <label for="description" class="form-label">Descrizione:</label>
+                    <textarea class="form-control" name="description" required id="description" rows="5">{{ old('description') }}</textarea>
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-3">
                 <div class="mb-3">
                     <label for="status" class="form-label">Stato:</label>
                     <select class="w-50 d-block" required name="status" id="status">
-                        <option value="{{ old('status') }}">In progresso</option>
-                        <option value="{{ old('status') }}">Completato</option>
-                        <option value="{{ old('status') }}">Archiviato</option>
+                        <option value="In_progresso">In progresso</option>
+                        <option value="Completato">Completato</option>
+                        <option value="Archiviato">Archiviato</option>
                     </select>
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-9">
                 <div class="mb-3">
                     <label for="category" class="form-label">Linguaggi:</label>
                     <input type="text" required class="form-control" id="category" rows="3"
@@ -51,14 +49,14 @@
 
             <div class="col-11">
                 <div class="mb-3">
-                    <label for="image" class="form-label">Copertina:</label>
-                    <input type="url" name="image" value="{{ old('image') }}" class="form-control" id="image"
+                    <label for="thumb" class="form-label">Copertina:</label>
+                    <input type="url" name="thumb" value="{{ old('thumb') }}" class="form-control" id="image"
                         placeholder="Inserisci un url...">
                 </div>
             </div>
             <div class="col-1">
-                <img src="{{ old('image', 'https://marcolanci.it/utils/placeholder.jpg') }}" alt="preview"
-                    class="img-fluid rounded-3 border border-success">
+                <img src="{{ old('thumb', 'https://marcolanci.it/utils/placeholder.jpg') }}" alt="preview"
+                    class="img-fluid rounded-3 border border-success h-100" id="img-preview">
             </div>
 
         </div>
@@ -70,4 +68,16 @@
             </button>
         </div>
     </form>
+@endsection
+
+@section('scripts')
+    <script>
+        const placeholder = 'https://marcolanci.it/utils/placeholder.jpg'
+        const imageField = document.getElementById('image');
+        const previewField = document.getElementById('img-preview');
+
+        imageField.addEventListener('input', () => {
+            previewField.src = imageField.value || placeholder;
+        });
+    </script>
 @endsection

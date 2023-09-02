@@ -12,10 +12,11 @@
 
         <div class="card mb-3">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="{{ $project->thumb }}" class="m-2 img-fluid rounded-start" alt="{{ $project->title }}">
+                <div class="col-md-3">
+                    <img src="{{ $project->thumb }}" class="m-2 img-fluid rounded-start" width="350px"
+                        alt="{{ $project->title }}">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="card-body">
                         <p class="card-text">{{ $project->description }}</p>
                         <p class="card-text"><small class="text-muted">{{ $project->category }}</small></p>
