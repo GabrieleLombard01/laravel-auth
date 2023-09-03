@@ -3,7 +3,7 @@
 @section('title', 'Projects')
 
 @section('content')
-    <h1 class="text-center pt-3 pb-3">Progetti:</h1>
+    <h1 class="text-center pb-1">Progetti:</h1>
     <hr>
     <a class="text-center mb-2 float-end btn btn-success fw-bold" href="{{ route('admin.projects.create') }}">+ Nuovo
         progetto</a>
