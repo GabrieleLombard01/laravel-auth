@@ -13,8 +13,10 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src="{{ $project->thumb }}" class="m-2 img-fluid rounded-start" width="350px"
-                        alt="{{ $project->title }}">
+                    @if ($project->thumb)
+                        <img src="{{ $project->thumb }}" class="m-2 img-fluid rounded-start" width="350px"
+                            alt="{{ $project->title }}">
+                    @endif
                 </div>
                 <div class="col-md-9">
                     <div class="card-body">
