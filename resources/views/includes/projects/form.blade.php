@@ -80,7 +80,7 @@
     <div class="col-11">
         <div class="mb-3">
             <label for="thumb" class="form-label">Copertina:</label>
-            <input type="file" name="thumb" value="{{ old('thumb', $project->thumb) }}"
+            <input type="file" name="thumb"
                 class="form-control  @error('thumb') is-invalid @elseif(old('thumb')) is-valid @enderror"
                 id="image" placeholder="Inserisci un url...">
             @error('thumb')
