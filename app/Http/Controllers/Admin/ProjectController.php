@@ -41,7 +41,19 @@ class ProjectController extends Controller
                 'category' => 'required|string',
                 'status' => 'required|string'
             ],
-            []
+            [
+                'title.required' => 'Attenzione! Il titolo è obbligatorio',
+                'title.max' => 'Attenzione! Il titolo deve essere lungo massimo :max caratteri',
+                'title.unique' => 'Attenzione! Questo titolo esiste già',
+
+                'description.required' => 'Attenzione! La descrizione è obbligatoria',
+
+                'thumb.url' => "L'url inserito non è valido",
+
+                'status.required' => "Attenzione! Lo stato è obbligatorio",
+
+                'category.required' => "Attenzione! Almeno un linguaggio è obbligatorio"
+            ]
 
         );
 
