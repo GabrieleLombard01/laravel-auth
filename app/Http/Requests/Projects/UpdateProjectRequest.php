@@ -28,11 +28,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:100', Rule::unique('projects')->ignore($id)],
             'description' => 'required|string',
-<<<<<<< HEAD
             'thumb' => 'nullable|url',
-=======
-            'thumb' => 'nullable|image:jpg,jpeg,png',
->>>>>>> 25d17b2ed0a4710fe5513136e8038913d05c96af
             'category' => 'required|string',
             'status' => 'required|string'
         ];
