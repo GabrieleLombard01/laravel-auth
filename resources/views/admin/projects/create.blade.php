@@ -18,6 +18,6 @@
 
 @section('scripts')
     @vite('resources/js/slug-generator.js')
-    {{-- @vite('resources/js/image-previewer.js') --}}
+    @vite('resources/js/image-previewer.js')
 
 @endsection

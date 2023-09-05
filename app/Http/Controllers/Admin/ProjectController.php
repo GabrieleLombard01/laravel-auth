@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Projects\StoreProjectRequest;
+use App\Http\Requests\Projects\UpdateProjectRequest;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -32,33 +35,9 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        $request->validate(
-            [
-                'title' => 'required|string|max:100|unique:projects',
-                'description' => 'required|string',
-                'thumb' => 'nullable|url',
-                'category' => 'required|string',
-                'status' => 'required|string'
-            ],
-            [
-                'title.required' => 'Attenzione! Il titolo è obbligatorio',
-                'title.max' => 'Attenzione! Il titolo deve essere lungo massimo :max caratteri',
-                'title.unique' => 'Attenzione! Questo titolo esiste già',
-
-                'description.required' => 'Attenzione! La descrizione è obbligatoria',
-
-                'thumb.url' => "L'url inserito non è valido",
-
-                'status.required' => "Attenzione! Lo stato è obbligatorio",
-
-                'category.required' => "Attenzione! Almeno un linguaggio è obbligatorio"
-            ]
-
-        );
-
-        $data = $request->all();
+        $data = $request->validated();
 
         $project = new Project();
 
@@ -90,34 +69,9 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-
-        $request->validate(
-            [
-                'title' => ['required', 'string', 'max:100', Rule::unique('projects')->ignore($project->id)],
-                'description' => 'required|string',
-                'thumb' => 'nullable|url',
-                'category' => 'required|string',
-                'status' => 'required|string'
-            ],
-            [
-                'title.required' => 'Attenzione! Il titolo è obbligatorio',
-                'title.max' => 'Attenzione! Il titolo deve essere lungo massimo :max caratteri',
-                'title.unique' => 'Attenzione! Questo titolo esiste già',
-
-                'description.required' => 'Attenzione! La descrizione è obbligatoria',
-
-                'thumb.url' => "L'url inserito non è valido",
-
-                'status.required' => "Attenzione! Lo stato è obbligatorio",
-
-                'category.required' => "Attenzione! Almeno un linguaggio è obbligatorio"
-            ]
-
-        );
-
-        $data = $request->all();
+        $data = $request->validated();
         $data['slug'] = Str::slug($data['title'], '-');
         $project->update($data);
 
