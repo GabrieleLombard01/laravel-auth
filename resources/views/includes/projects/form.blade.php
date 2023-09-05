@@ -1,8 +1,8 @@
 @if ($project->exists)
-    <form method="POST" action="{{ route('admin.projects.update', $project) }}">
+    <form method="POST" action="{{ route('admin.projects.update', $project) }}" novalidate>
         @method('PUT')
     @else
-        <form method="POST" action="{{ route('admin.projects.store') }}">
+        <form method="POST" action="{{ route('admin.projects.store') }}" novalidate>
 @endif
 @csrf
 
