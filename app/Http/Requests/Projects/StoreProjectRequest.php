@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:100', 'unique:projects'],
             'description' => 'required|string',
-            'thumb' => 'nullable|url',
+            'thumb' => 'nullable|img:jpg,jpeg,png',
             'category' => 'required|string',
             'status' => 'required|string'
         ];
@@ -40,7 +40,7 @@ class StoreProjectRequest extends FormRequest
 
                 'description.required' => 'Attenzione! La descrizione è obbligatoria',
 
-                'thumb.url' => "L'url inserito non è valido",
+                'thumb.url' => "Attenzione! l'immagine dev'essere in formato jpg, jpeg o png",
 
                 'status.required' => "Attenzione! Lo stato è obbligatorio",
 
