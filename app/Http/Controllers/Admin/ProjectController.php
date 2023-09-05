@@ -33,6 +33,18 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'title' => 'required|string|max:100|unique:projects',
+                'description' => 'required|string',
+                'thumb' => 'nullable|url',
+                'category' => 'required|string',
+                'status' => 'required|string'
+            ],
+            []
+
+        );
+
         $data = $request->all();
 
         $project = new Project();
