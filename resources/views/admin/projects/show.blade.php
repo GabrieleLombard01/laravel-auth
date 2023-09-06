@@ -14,7 +14,7 @@
             <div class="row g-0">
                 <div class="col-md-3">
                     @if ($project->thumb)
-                        <img src="{{ $project->thumb }}" class="m-2 img-fluid rounded-start" width="350px"
+                        <img src="{{ asset('storage/' . $project->thumb) }}" class="m-2 img-fluid rounded-start" width="350px"
                             alt="{{ $project->title }}">
                     @endif
                 </div>
