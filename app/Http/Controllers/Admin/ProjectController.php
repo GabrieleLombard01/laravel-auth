@@ -43,8 +43,7 @@ class ProjectController extends Controller
         $project = new Project();
 
         if (array_key_exists('image', $data)) {
-            Storage::putFile('project_images', $data['image']);
-            die();
+            Storage::put('project_images', $data['image']);
         }
 
         $project->fill($data);
