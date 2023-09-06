@@ -31,7 +31,7 @@
         <div class="d-flex justify-content-between">
 
             <div class="col-3">
-                <a class=" btn border fw-bold" href="{{ route('admin.projects.index') }}"><i
+                <a class=" myBtn fw-bold" href="{{ route('admin.projects.index') }}"><i
                         class="me-2 fa-solid fa-circle-left"></i>Torna ai
                     progetti</a>
 
@@ -40,7 +40,7 @@
 
             <div class="col-3 d-flex justify-content-end">
                 <!--EDIT-->
-                <a class="me-3 mb-3 fw-bold text-decoration-none btn btn-sm btn-warning"
+                <a class="me-3 mb-3 fw-bold text-decoration-none myBtn btn-sm btn-warning"
                     href="{{ route('admin.projects.edit', $project) }}">
                     <i class="pe-2 fas fa-pencil"></i>Modifica
                 </a>
@@ -49,10 +49,10 @@
                 <form class="d-inline delete-form" action="{{ route('admin.projects.destroy', $project) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class=" mb-3 btn btn-sm btn-danger">
-                        <a class=" fw-bold text-decoration-none" href="#">
+                    <button type="submit" class=" mb-3 myBtn btn-sm btn-danger">
+                        <span class=" fw-bold text-decoration-none" href="#">
                             <i class="pe-2 fas fa-trash"></i>Elimina
-                        </a>
+                        </span>
                     </button>
                 </form>
             </div>

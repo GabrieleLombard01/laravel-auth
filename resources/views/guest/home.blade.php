@@ -20,7 +20,8 @@
             @forelse($projects as $project)
                 <div class="col-3">
                     <div class="card m-3" style="width: 18rem;">
-                        <img src="{{ $project->thumb }}" class="card-img-top" alt="{{ $project->title }}">
+                        <img src="{{ asset('storage/' . $project->thumb) }}" class="card-img-top"
+                            alt="{{ $project->title }}">
                         <div class="card-body">
                             <h4 class="card-title">{{ $project->title }}.</h4>
                             <hr>

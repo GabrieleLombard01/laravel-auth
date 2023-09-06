@@ -4,8 +4,14 @@
     color: white;
     border: solid white 1px;
 }
-#show form button a{
+#show a{
+    text-decoration: none;
+}
+.myBtn{
     color: white;
+    background-color: #003500;
+    padding: 3px 8px;
+    border: solid white 1px;
 }
 
 /*CARD:*/
@@ -14,19 +20,11 @@
 }
 
 /*Pseudo-cleasses:*/
-#show .btn:hover{
-    background-color: white;
-    color: #003500;
+.myBtn:hover{
+    color: #c7e0d0;
+    background-color: #001c00;
 }
-#show .btn:active{
-    background-color: #003500;
-    color: #a1dab5;
-}
-#show form button a:hover{
-    background-color: white;
-    color: #003500;
-}
-#show form button a:active{
-    background-color: #003500;
-    color: #a1dab5;
+.myBtn:active{
+    color: #0cd756;
+    background-color: #001c00;
 }
