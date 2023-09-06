@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Projects\StoreProjectRequest;
 use App\Http\Requests\Projects\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -40,6 +41,11 @@ class ProjectController extends Controller
         $data = $request->validated();
 
         $project = new Project();
+
+        if (array_key_exists('image', $data)) {
+            Storage::putFile('project_images', $data['image']);
+            die();
+        }
 
         $project->fill($data);
 
