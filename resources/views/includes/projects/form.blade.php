@@ -49,10 +49,10 @@
             <select aria-label="Default select example"
                 class="form-select  @error('status') is-invalid @elseif(old('status')) is-valid @enderror"
                 required name="status" id="status" value="{{ old('status', $project->status) }}">
-                <option disabled selected>Seleziona... </option>
-                <option>In progresso</option>
-                <option>Completato</option>
-                <option>Archiviato</option>
+                <option disabled {{ !old('status', $project->status) ? 'selected' : '' }}>Seleziona... </option>
+                <option {{ old('status', $project->status) == 'In progresso' ? 'selected' : '' }}>In progresso</option>
+                <option {{ old('status', $project->status) == 'Completato' ? 'selected' : '' }}>Completato</option>
+                <option {{ old('status', $project->status) == 'Archiviato' ? 'selected' : '' }}>Archiviato</option>
             </select>
             @error('status')
                 <div class="invalid-feedback">
