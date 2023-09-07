@@ -16,8 +16,12 @@ class Project extends Model
 
     public function thumb(): Attribute
     {
+<<<<<<< HEAD
         return Attribute::make(
             get: fn (string $value) => asset('storage/' . $value)
         );
+=======
+        return Attribute::make(get: fn (string $value) => asset('storage/' . $value));
+>>>>>>> f1492f60daac9cce2c757af25cd2f46419c48ea7
     }
 }
