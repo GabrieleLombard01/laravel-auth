@@ -17,7 +17,7 @@ class Project extends Model
     public function thumb(): Attribute
     {
         return Attribute::make(
-            get: fn (string $value) => asset('storage/' . $value)
+            get: fn (?string $value) => $value ? asset('storage/' . $value) : asset('storage/default.jpg')
         );
     }
 }
