@@ -38,12 +38,12 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-
         $data = $request->validated();
 
-
         $project = new Project();
+
         $project->fill($data);
+
         $project->slug = Str::slug($project->title, '-');
 
         if (array_key_exists('thumb', $data)) {
@@ -51,10 +51,6 @@ class ProjectController extends Controller
             $img_url = Storage::putFile('project_images', $data['thumb']);
             $project->thumb = $img_url;
         };
-
-
-
-
 
         $project->save();
 
@@ -84,8 +80,8 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
 
-
         $project->fill($data);
+
         $project->slug = Str::slug($project->title, '-');
 
         if (array_key_exists('thumb', $data)) {
@@ -94,12 +90,7 @@ class ProjectController extends Controller
             $project->thumb = $img_url;
         };
 
-
-
-
-
         $project->save();
-
 
         return to_route('admin.projects.show', $project)->with('alert-message', 'Progetto modificato con successo!')->with('alert-type', 'success');
     }

@@ -20,8 +20,7 @@
             @forelse($projects as $project)
                 <div class="col-3">
                     <div class="card m-3" style="width: 18rem;">
-                        <img src="{{ asset('storage/' . $project->thumb) }}" class="card-img-top"
-                            alt="{{ $project->title }}">
+                        <img src="{{ $project->thumb }}" class="card-img-top" alt="{{ $project->title }}">
                         <div class="card-body">
                             <h4 class="card-title">{{ $project->title }}.</h4>
                             <hr>
@@ -43,9 +42,7 @@
 @section('footer')
     <footer>
         <div class="container pt-3 pb-4">
-            <small class="pt-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni beatae
-                repudiandae alias necessitatibus optio iste, delectus ea nisi deserunt placeat voluptatem! Nam quis sapiente
-                debitis, voluptas ut facere magni aliquid!</small>
+            <small class="pt-5">Made with ♥ by Gabriele Lombardo</small>
         </div>
     </footer>
 @endsection
